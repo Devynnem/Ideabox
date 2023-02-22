@@ -1,38 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>IdeaBox</title>
     <link rel="stylesheet" href="./styles.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
-  </head>
-  <body>
-    <nav>
-        <h1>IdeaBox</h1>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="main-nav">
+        <p class="main-header">IdeaBox</p>
         <div>
-            <h2>
+            <p class="second-header">
                 Filter Starred Ideas
-            </h2>
-            <button>
+            </p>
+            <button class="starred-ideas">
                 Show Starred Ideas
             </button>
         </div>
     </nav>
     <main>
-        <section class="user-input">
-            <p>Title</p>
-            <input type="text">
-            <p>Body</p>
-            <input type="text">
-            <button class="save-button">
-                Save
-            </button>
-            <button id="search-button">
-                <img src="" alt="">
-            </button>
-            <input type="text" placeholder="Search ideas">
+        <section class="input-container">
+            <section class="user-input">
+                <p>Title</p>
+                <input class="title-input" type="text">
+                <p>Body</p>
+                <input class="body-input" type="text">
+                <br>
+                <button class="save-button">
+                    Save
+                </button>
+                <br>
+                <div class="idea-search">
+                    <button id="search-button">
+                        <svg id="search-icon" class="search-icon" viewBox="0 0 14.45 14.55">
+                            <path class="cls-1"
+                                d="M11.77,14.31a1.32,1.32,0,0,1-1-.4L8.2,11.31a5.79,5.79,0,1,1,1.86-9.43h0A5.79,5.79,0,0,1,11.31,8.2l2.6,2.61a1.35,1.35,0,0,1,0,1.93l-1.17,1.17A1.36,1.36,0,0,1,11.77,14.31ZM8.56,8.83l3.21,3.22.28-.28L8.84,8.56l.39-.67A3.78,3.78,0,1,0,7.89,9.23Z" />
+                        </svg>
+                    </button>
+                    <input class="search-ideas" type="text" placeholder="Search ideas">
+                </div>
+            </section>
         </section>
         <section class="saved-cards">
             <section class="idea-container">
@@ -51,13 +64,14 @@
                         Comment
                     </p>
                 </section>
-                
+
             </section>
 
         </section>
 
     </main>
-	<script src="main.js"></script>
-    <script> src="Idea.js"</script>
-  </body>
+    <script src="main.js"></script>
+    <script> src = "Idea.js"</script>
+</body>
+
 </html>
