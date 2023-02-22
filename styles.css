@@ -81,3 +81,53 @@ body {
     display: flex;
     flex-direction: column;
 }
+.saved-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 75vw;
+    height: 60vh;
+    border: solid red;
+}
+.idea-container {
+    border: 1px solid #1f1f3d;
+    width: 15vw;
+    height: 25vh;
+}
+.top-margin {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1f1f3d;
+}
+
+.x-btn {
+    width: 50px;
+    height: 50px;
+    border: 0;
+    color: #fff;
+    opacity: 100;
+    background-color: #1f1f3d;
+}
+
+.star-btn {
+    width: 50px;
+    height: 50px;
+    background-color: #1f1f3d;
+    border: 0;
+}
+.bottom-bar {
+    display: flex;
+    /* bottom: 0; */
+    position: absolute;
+}
+.comment-bar {
+    display: flex;
+    background-color: #5356a4;
+
+}
+.plus-button {
+    width: 50px;
+    height: 50px;
+    background-color: #5356a4;
+    border: 0;
+}
