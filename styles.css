@@ -2,8 +2,6 @@
 margin: 0;
 padding: 0;
 border: 0;
-font-family: "Open Sans";
-
 } */
 /* * {
     border: 2px solid red;
@@ -14,12 +12,12 @@ font-family: "Open Sans";
 .main-nav {
     display: flex;
     flex-direction: column;
-    padding-left: 18px;
     height: 100vh;
     width: 24vw;
     background-color: #1f1f3d;
 }
 .main-header {
+    padding-left: 18px;
     font-size: large;
     font-family: "Open Sans", Bold;
     font-weight: bold;
@@ -31,6 +29,7 @@ font-family: "Open Sans";
     color: #bfbfdd
 }
 .starred-ideas {
+    cursor: pointer;
     background-color: #5356a4;
     color: #e9e9f3;
     border: 0;
@@ -41,6 +40,7 @@ font-family: "Open Sans";
     font-weight:600;
 }
 .nav-color {
+    padding-left: 18px;
     border-top: solid #353567;
     border-bottom: solid #353567;
     padding-bottom: 30px;
@@ -60,13 +60,13 @@ body {
     font-weight: bolder;
 }
 .title-input {
-    width: 195px;
-    height: 26px;
+    width: 50vw;
+    height: 3.5vh;
     font-family: "Open Sans", Light;
 }
 .body-input {
-    width: 195px;
-    height: 45px;
+    width: 50vw;
+    height: 10vh;
     font-family: "Open Sans", Light;
     }
 
@@ -74,31 +74,35 @@ body {
     border: solid 1.5px #353567
 }
 #titles {
-    font-size: 13px;
+    font-size: 16px;
     margin-bottom: 1.5px
 }
 .save-button {
-    width: 195px;
-    height: 26px;
+    width: 50.3vw;
+    height: 5vh;
+    font-size: 20px;
     background-color:#353567;
     color:#e9e9f3;
-    border:0
+    border:0;
+    font-family: "Open Sans", Bold;
+    font-weight: bolder;
 }
 #search-button {
-    width: 23px;
-    height: 30px;
+    width: 4vw;
+    height: 5vh;
     border: 0;
     background-color: #353567;
     cursor: pointer;
 }
 .search-ideas {
-    width: 172px;
-    height: 26px;
+    width: 46vw;
+    height: 4.5vh;
     padding-left: -5px;
 }
 #search-icon {
+    height: 3vh;
+    width: 3vw;
     border: 0;
-
 }
 .idea-search {
     display: flex;
@@ -109,11 +113,15 @@ body {
 }
 /* this is for saved cards */
 .saved-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    width: 75vw;
-    height: 60vh;
+        /* display: flex; */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 75vw;
+        height: 60vh;
+        background-color: #eaeaf4;
+        align-items: center;
+        justify-items: center;
+        align-content: space-evenly;
 }
 .idea-container {
     border: 1px solid #1f1f3d;
@@ -122,6 +130,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: #fff;
 }
 .top-margin {
     display: flex;
@@ -186,4 +195,8 @@ body {
     font-size: 16px;
     font-family: "Open Sans", Bold;
     font-weight: bolder;
+}
+
+.hidden {
+    display: none;
 }
