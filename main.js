@@ -5,7 +5,8 @@ var userSaveBtn = document.querySelector('.save-button')
 var userTitleInput = document.querySelector('.idea-title')
 var userBodyInput = document.querySelector('.idea-contents')
 var ideaBoxes = document.querySelector('.saved-cards')
-
+var dltBtn = document.querySelector('.x-btn')
+var ideaContainer = document.querySelector('.idea-container')
 
 var currentIdea; // this is how we create new ideas
 var savedIdeas= [] // this is what we will push saved ideas into
@@ -16,8 +17,15 @@ var savedIdeas= [] // this is what we will push saved ideas into
     //}
     userTitle.addEventListener('input', changeButtonColor)
     userBody.addEventListener('input',changeButtonColor)
-    userSaveBtn.addEventListener('click', createIdea,)
+    userSaveBtn.addEventListener('click', createIdea)
     changeButtonColor();
+    ideaBoxes.addEventListener('click', function(event) {
+        if (event.target.id === ("x-icon")) {
+            deleteIdea(event);
+        }
+       
+    })
+    
 
     function changeButtonColor() {
         // event.preventDefault()
@@ -71,6 +79,21 @@ var savedIdeas= [] // this is what we will push saved ideas into
     }
 
      userSaveBtn.disabled = true;
+     
+    //  ideaBoxes.addEventListener('click', deleteIdea)
+     
+     
+     function deleteIdea(event) {
+         event.target.remove(ideaContainer)
+       
+            console.log('hi')
+        }
+    //     if (event.target.classList.contains("x-btn")) {
+    //       this.closest(".idea-container").remove()
+    //     }
+    //         console.log(savedIdeas, "line 83")
+    //     }
+
     
     
     
