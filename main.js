@@ -19,12 +19,10 @@ var savedIdeas= [] // this is what we will push saved ideas into
     userBody.addEventListener('input',changeButtonColor)
     userSaveBtn.addEventListener('click', createIdea)
     changeButtonColor();
-    ideaBoxes.addEventListener('click', function(event) {
-        if (event.target.id === ("x-icon")) {
-            deleteIdea(event);
-        }
+    ideaBoxes.addEventListener('click', deleteIdea) 
        
-    })
+       
+    
     
 
     function changeButtonColor() {
@@ -53,13 +51,15 @@ var savedIdeas= [] // this is what we will push saved ideas into
         currentIdea = new Idea(selfTitle, selfBody)
         saveUserIdea() 
         console.log(savedIdeas)
-        ideaBoxes.innerHTML += `<section class="idea-container">
+        
+
+        ideaBoxes.innerHTML += `<section class="idea-container" >
         <section class="top-margin">
         <button class="star-btn">
         <img class="star-icon" id="star-icon" src="assets/star.svg" alt="blank favorite icon">
         <img class="star-icon-favorited hidden" id="star-icon-favorited" src="assets/star-active.svg" alt="favorite icon active">
         </button>
-        <button class="x-btn">
+        <button class="x-btn" id="${currentIdea.id}">
         <img class="x-icon" id="x-icon" src="assets/delete.svg" alt="delete icon">
         </button>
         </section>
@@ -74,8 +74,10 @@ var savedIdeas= [] // this is what we will push saved ideas into
         <h3 id="idea-card-comment">Comment</h3>
         </section>
         </section>`
+        
         clearInputs() 
         changeButtonColor()
+        
     }
 
      userSaveBtn.disabled = true;
@@ -83,10 +85,24 @@ var savedIdeas= [] // this is what we will push saved ideas into
     //  ideaBoxes.addEventListener('click', deleteIdea)
      
      
-     function deleteIdea(event) {
-         event.target.remove(ideaContainer)
+    //  function deleteIdea(event) {
+    //      event.target.remove(ideaContainer)
        
-            console.log('hi')
+    //         console.log('hi')
+    //     }
+
+        function deleteIdea(event) {
+            if (event.target.className === 'x-icon') {
+                event.target.closest('.idea-container').remove()
+            }
+            var spliceIdea = event.target.parentNode.id
+            for (var i=0; i < savedIdeas.length; i++){
+                console.log(spliceIdea, 'line 97')
+                console.log(savedIdeas[i].id)
+                if (savedIdeas[i].id == spliceIdea)
+                savedIdeas.splice(i, 1);
+                console.log(savedIdeas)
+           }
         }
     //     if (event.target.classList.contains("x-btn")) {
     //       this.closest(".idea-container").remove()
