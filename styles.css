@@ -164,6 +164,10 @@ body {
     border: 0;
     cursor: pointer;
 }
+.star-icon.clicked {
+    background-image: 'assets/star-active.svg';
+}
+
 
 .bottom-bar {
     display: flex;
