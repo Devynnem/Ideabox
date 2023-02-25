@@ -7,58 +7,51 @@ var userBodyInput = document.querySelector('.idea-contents')
 var ideaBoxes = document.querySelector('.saved-cards')
 var dltBtn = document.querySelector('.x-btn')
 var ideaContainer = document.querySelector('.idea-container')
-// var star = document.querySelector('.star-icon')
-// var orangeStar = document.querySelector('.star-icon-favorited')
+
 
 var currentIdea; // this is how we create new ideas
-var savedIdeas= [] // this is what we will push saved ideas into
+var savedIdeas = [] // this is what we will push saved ideas into
 
-// Creates Ideas upon save click
-// if (userTitle.value === '' || userBody.value === '') {
-    // classList.add('.save-button2')
-    //}
-    userTitle.addEventListener('input', changeButtonColor)
-    userBody.addEventListener('input',changeButtonColor)
-    userSaveBtn.addEventListener('click', createIdea)
-    changeButtonColor();
-    ideaBoxes.addEventListener('click', deleteIdea) 
-    ideaBoxes.addEventListener('click', favoriteIdea)
-    
-       
-       
-    
-    
+userTitle.addEventListener('input', changeButtonColor)
+userBody.addEventListener('input', changeButtonColor)
+userSaveBtn.addEventListener('click', createIdea)
+ideaBoxes.addEventListener('click', deleteIdea)
+ideaBoxes.addEventListener('click', favoriteIdea)
 
-    function changeButtonColor() {
-        // event.preventDefault()
-     if (!userTitle.value || !userBody.value) {
-         userSaveBtn.classList.remove('save-button-able');
-         userSaveBtn.disabled = true;
-     } else if (userTitle.value && userBody.value){
+
+
+
+
+
+function changeButtonColor() {
+    if (!userTitle.value || !userBody.value) {
+        userSaveBtn.classList.remove('save-button-able');
+        userSaveBtn.disabled = true;
+    } else if (userTitle.value && userBody.value) {
         userSaveBtn.classList.add('save-button-able');
-        userSaveBtn.disabled =false;
-     }
-     }
-
-    function saveUserIdea() {
-        savedIdeas.push(currentIdea)
-    } 
-    
-    function clearInputs() {
-        userTitle.value = '';
-        userBody.value = '';
+        userSaveBtn.disabled = false;
     }
-    function createIdea(event) {
-        event.preventDefault()
-        var selfTitle = userTitle.value;
-        var selfBody = userBody.value;
-        currentIdea = new Idea(selfTitle, selfBody)
-        saveUserIdea() 
-        console.log(savedIdeas)
-        
+}
 
-        ideaBoxes.innerHTML += `<section class="idea-container" >
-        <section class="top-margin">
+function saveUserIdea() {
+    savedIdeas.push(currentIdea)
+}
+
+function clearInputs() {
+    userTitle.value = '';
+    userBody.value = '';
+}
+function createIdea(event) {
+    event.preventDefault()
+    var selfTitle = userTitle.value;
+    var selfBody = userBody.value;
+    currentIdea = new Idea(selfTitle, selfBody)
+    saveUserIdea()
+    console.log(savedIdeas)
+
+
+    ideaBoxes.innerHTML += `<section class="idea-container" >
+        <section class="top-margin" id="${currentIdea.id}">
         <button class="star-btn">
         <img class="star-icon" id="star-icon" src="assets/star.svg" alt="blank favorite icon">
         </button>
@@ -77,55 +70,45 @@ var savedIdeas= [] // this is what we will push saved ideas into
         <h3 id="idea-card-comment">Comment</h3>
         </section>
         </section>`
-        
-        clearInputs() 
-        changeButtonColor()
-        
-    }
+    clearInputs()
+    changeButtonColor()
+}
 
-     userSaveBtn.disabled = true;
-     
-    //  ideaBoxes.addEventListener('click', deleteIdea)
-     
-     
-    //  function deleteIdea(event) {
-    //      event.target.remove(ideaContainer)
-       
-    //         console.log('hi')
-    //     }
-function favoriteIdea (event) {
+function favoriteIdea(event) {
+    var favoriteCard = parseInt(event.target.parentNode.parentNode.id);
     if (event.target.className === 'star-icon') {
-        event.target.parentNode.innerHTML =`<img class="star-icon-favorited" id="star-icon-favorited" src="assets/star-active.svg" alt="favorite icon active">`   
-        currentIdea.updateIdea()   
+        event.target.parentNode.innerHTML = `<img class="star-icon-favorited" id="star-icon-favorited" src="assets/star-active.svg" alt="favorite icon active">`
+        for (var i = 0; i < savedIdeas.length; i++) {
+            if (savedIdeas[i].id === favoriteCard && savedIdeas[i].star === false) {
+                savedIdeas[i].updateIdea();
+            }
+        }
     } else if (event.target.className === 'star-icon-favorited') {
-        event.target.parentNode.innerHTML =`<img class="star-icon" id="star-icon" src="assets/star.svg" alt="blank favorite icon">`
+        event.target.parentNode.innerHTML = `<img class="star-icon" id="star-icon" src="assets/star.svg" alt="blank favorite icon">`
+        for (var i = 0; i < savedIdeas.length; i++) {
+            if (savedIdeas[i].id === favoriteCard && savedIdeas[i].star === true) {
+                savedIdeas[i].updateIdea();
+            }
+        }
     }
 }
-// var starIdea = parseInt(event.target.parentNode.id)
-// } for (var i=0; i < savedIdeas.length; i++){
-    //     if (savedIdeas[i].id === starIdea)
-    //     starIdea.updateIdea()
-    
-    // for (var i=0; i < savedIdeas.length; i++){
-    //     if (savedIdeas[i].id === starIdea)
-// }
 
-        function deleteIdea(event) {
-            if (event.target.className === 'x-icon') {
-                event.target.closest('.idea-container').remove()
-            }
-            var spliceIdea = parseInt(event.target.parentNode.id)
-            for (var i=0; i < savedIdeas.length; i++){
-                if (savedIdeas[i].id === spliceIdea)
-                savedIdeas.splice(i, 1);
-           }
-        }
 
-    
-    
-    
-    
-    
-    
-    
-    
+function deleteIdea(event) {
+    if (event.target.className === 'x-icon') {
+        event.target.closest('.idea-container').remove()
+    }
+    var spliceIdea = parseInt(event.target.parentNode.id)
+    for (var i = 0; i < savedIdeas.length; i++) {
+        if (savedIdeas[i].id === spliceIdea)
+            savedIdeas.splice(i, 1);
+    }
+}
+
+
+
+
+
+
+
+
