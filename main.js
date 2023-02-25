@@ -61,7 +61,6 @@ var savedIdeas= [] // this is what we will push saved ideas into
         <section class="top-margin">
         <button class="star-btn">
         <img class="star-icon" id="star-icon" src="assets/star.svg" alt="blank favorite icon">
-        <img class="star-icon-favorited hidden" id="star-icon-favorited" src="assets/star-active.svg" alt="favorite icon active">
         </button>
         <button class="x-btn" id="${currentIdea.id}">
         <img class="x-icon" id="x-icon" src="assets/delete.svg" alt="delete icon">
@@ -96,37 +95,31 @@ var savedIdeas= [] // this is what we will push saved ideas into
     //     }
 function favoriteIdea (event) {
     if (event.target.className === 'star-icon') {
-        document.querySelector('.star-icon').classList.add('hidden')
-       document.querySelector('.star-icon-favorited').classList.remove('hidden')
-            
-        currentIdea.updateIdea()
-        //    star.classList.toggle('clicked')
-        //     currentIdea.updateIdea()
-        } else if (event.target.className === 'star-icon') {
-            document.querySelector('.star-icon-favorited').classList.add('hidden')
-            document.querySelector('.star-icon').classList.remove('hidden')
-        }
-        
-        
-    
+        event.target.parentNode.innerHTML =`<img class="star-icon-favorited" id="star-icon-favorited" src="assets/star-active.svg" alt="favorite icon active">`   
+        currentIdea.updateIdea()   
+    } else if (event.target.className === 'star-icon-favorited') {
+        event.target.parentNode.innerHTML =`<img class="star-icon" id="star-icon" src="assets/star.svg" alt="blank favorite icon">`
+    }
 }
-
+// var starIdea = parseInt(event.target.parentNode.id)
+// } for (var i=0; i < savedIdeas.length; i++){
+    //     if (savedIdeas[i].id === starIdea)
+    //     starIdea.updateIdea()
+    
+    // for (var i=0; i < savedIdeas.length; i++){
+    //     if (savedIdeas[i].id === starIdea)
+// }
 
         function deleteIdea(event) {
             if (event.target.className === 'x-icon') {
                 event.target.closest('.idea-container').remove()
             }
-            var spliceIdea = event.target.parentNode.id
+            var spliceIdea = parseInt(event.target.parentNode.id)
             for (var i=0; i < savedIdeas.length; i++){
-                if (savedIdeas[i].id == spliceIdea)
+                if (savedIdeas[i].id === spliceIdea)
                 savedIdeas.splice(i, 1);
            }
         }
-    //     if (event.target.classList.contains("x-btn")) {
-    //       this.closest(".idea-container").remove()
-    //     }
-    //         console.log(savedIdeas, "line 83")
-    //     }
 
     
     
