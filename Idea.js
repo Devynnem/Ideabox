@@ -1,17 +1,16 @@
 class Idea{
     constructor(title,body) {
-        this.id=Date.now();
+        this.id= Date.now();
         this.title=title;
         this.body=body;
         this.star=false;
 
     }
     updateIdea() {
-            this.star = true
-
-//     } else {
-//         this.star = false
-//     }
-// }
+           if(this.star === false) {
+            this.star = true;
+           } else if (this.star === true) {
+            this.star = false;
+           }
     }
 }
