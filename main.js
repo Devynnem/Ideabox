@@ -7,6 +7,8 @@ var userBodyInput = document.querySelector('.idea-contents')
 var ideaBoxes = document.querySelector('.saved-cards')
 var dltBtn = document.querySelector('.x-btn')
 var ideaContainer = document.querySelector('.idea-container')
+// var star = document.querySelector('.star-icon')
+// var orangeStar = document.querySelector('.star-icon-favorited')
 
 var currentIdea; // this is how we create new ideas
 var savedIdeas= [] // this is what we will push saved ideas into
@@ -20,6 +22,8 @@ var savedIdeas= [] // this is what we will push saved ideas into
     userSaveBtn.addEventListener('click', createIdea)
     changeButtonColor();
     ideaBoxes.addEventListener('click', deleteIdea) 
+    ideaBoxes.addEventListener('click', favoriteIdea)
+    
        
        
     
@@ -90,6 +94,23 @@ var savedIdeas= [] // this is what we will push saved ideas into
        
     //         console.log('hi')
     //     }
+function favoriteIdea (event) {
+    if (event.target.className === 'star-icon') {
+        document.querySelector('.star-icon').classList.add('hidden')
+       document.querySelector('.star-icon-favorited').classList.remove('hidden')
+            
+        currentIdea.updateIdea()
+        //    star.classList.toggle('clicked')
+        //     currentIdea.updateIdea()
+        } else if (event.target.className === 'star-icon') {
+            document.querySelector('.star-icon-favorited').classList.add('hidden')
+            document.querySelector('.star-icon').classList.remove('hidden')
+        }
+        
+        
+    
+}
+
 
         function deleteIdea(event) {
             if (event.target.className === 'x-icon') {
@@ -97,11 +118,8 @@ var savedIdeas= [] // this is what we will push saved ideas into
             }
             var spliceIdea = event.target.parentNode.id
             for (var i=0; i < savedIdeas.length; i++){
-                console.log(spliceIdea, 'line 97')
-                console.log(savedIdeas[i].id)
                 if (savedIdeas[i].id == spliceIdea)
                 savedIdeas.splice(i, 1);
-                console.log(savedIdeas)
            }
         }
     //     if (event.target.classList.contains("x-btn")) {
