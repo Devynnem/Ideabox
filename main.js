@@ -59,7 +59,7 @@ function createIdea(event) {
                 <button class="plus-button">
                     <img class="plus-icon" id="plusIcon" src="assets/comment.svg" alt="comment icon">
                 </button>
-                <h3 id="idea-card-comment">Comment</h3>
+                <h3 class="idea-card-comment">Comment</h3>
             </section>
         </section>`;
     clearInputs();
