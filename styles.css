@@ -1,14 +1,4 @@
-/* * {
-margin: 0;
-padding: 0;
-border: 0;
-} */
-/* * {
-    border: 2px solid red;
-} */
-/* html {
-    font-family: "Open Sans", sans-serif;
-} */
+
 .main-nav {
     display: flex;
     flex-direction: column;
@@ -16,6 +6,7 @@ border: 0;
     width: 24vw;
     background-color: #1f1f3d;
 }
+
 .main-header {
     padding-left: 18px;
     font-size: large;
@@ -23,13 +14,15 @@ border: 0;
     font-weight: bold;
     color: #e9e9f3;
 }
+
 .second-header {
     font-family: "Open Sans", Bold;
     font-weight: bold;
     color: #bfbfdd
 }
+
 .starred-ideas {
-    cursor: pointer;
+    cursor: not-allowed;
     background-color: #5356a4;
     color: #e9e9f3;
     border: 0;
@@ -39,16 +32,18 @@ border: 0;
     font-size: large;
     font-weight:600;
 }
+
 .nav-color {
     padding-left: 18px;
     border-top: solid #353567;
     border-bottom: solid #353567;
     padding-bottom: 30px;
 }
+
 body {
     display: flex;
 }
-/* this is input values */
+
 .input-container {
     width: 75vw;
     height: 40vh;
@@ -59,20 +54,25 @@ body {
     font-family: "Open Sans", Bold;
     font-weight: bolder;
 }
+
 .title-input {
     width: 50vw;
     height: 3.5vh;
     font-family: "Open Sans", Light;
 }
+
 .body-input {
     width: 50vw;
     height: 10vh;
     font-family: "Open Sans", Light;
-    }
+}
 
-.body-input, .title-input, .search-ideas {
+.body-input, 
+.title-input, 
+.search-ideas {
     border: solid 1.5px #353567
 }
+
 #titles {
     font-size: 16px;
     margin-bottom: 1.5px
@@ -89,38 +89,42 @@ body {
     font-weight: bolder;
     cursor: auto;
 }
+
 .save-button-able {
     background-color: #353567;
     cursor: pointer;
 }
 
-#search-button {
+#searchButton {
     width: 4vw;
     height: 5vh;
     border: 0;
     background-color: #353567;
-    cursor: pointer;
+    cursor: not-allowed;
 }
+
 .search-ideas {
     width: 46vw;
     height: 4.5vh;
     padding-left: -5px;
 }
-#search-icon {
+
+#searchIcon {
     height: 3vh;
     width: 3vw;
     border: 0;
 }
+
 .idea-search {
     display: flex;
 }
+
 .user-input {
     display: flex;
     flex-direction: column;
 }
-/* this is for saved cards */
+
 .saved-cards {
-    /* display: flex; */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 75vw;
@@ -132,6 +136,7 @@ body {
     overflow-y: auto;
     overflow-x: hidden;
 }
+
 .idea-container {
     border: 1px solid #1f1f3d;
     width: 15vw;
@@ -141,37 +146,28 @@ body {
     justify-content: space-between;
     background-color: #fff;
 }
+
 .top-margin {
     display: flex;
     justify-content: space-between;
     background-color: #1f1f3d;
 }
 
-.x-btn {
+.x-btn, 
+.star-btn {
     width: 40px;
     height: 40px;
     border: 0;
-    color: #fff;
-    opacity: 100;
     background-color: #1f1f3d;
     cursor: pointer;
 }
 
-.star-btn {
-    width: 40px;
-    height: 40px;
-    background-color: #1f1f3d;
-    border: 0;
-    cursor: pointer;
-}
 .star-icon.clicked {
     background-image: 'assets/star-active.svg';
 }
 
-
 .bottom-bar {
     display: flex;
-    /* bottom: 0; */
     justify-content: flex-start;
     align-items: center;
     background-color: #5356a4;
@@ -184,9 +180,11 @@ body {
     height: 40px;
     background-color: #5356a4;
     border: 0;
-    cursor: pointer;
+    cursor: not-allowed;
 }
-.idea-title, .idea-contents {
+
+.idea-title, 
+.idea-contents {
     padding-left: 6px;
     padding-top: 0;
     margin-top: 0;
@@ -195,21 +193,21 @@ body {
     background-color: #fff;
     color: #1f1f3d
 }
+
 .idea-title {
     font-family:'Open Sans', Bold;
     font-weight: bold
 }
+
 .idea-contents {
     font-family: "Open Sans", Light;
     font-weight: bolder;
 }
-#idea-card-comment {
+
+.idea-card-comment {
     color: #e9e9f3;
     font-size: 16px;
     font-family: "Open Sans", Bold;
     font-weight: bolder;
 }
 
-.hidden {
-    display: none;
-}
