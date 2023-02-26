@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,18 +10,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <nav class="main-nav">
-        <p class="main-header">IdeaBox</p>
-        <div class="nav-color">
-            <p class="second-header">
-                Filter Starred Ideas
-            </p>
+        <h1 class="main-header">IdeaBox</h1>
+        <section class="nav-color">
+            <p class="second-header">Filter Starred Ideas</p>
             <button class="starred-ideas">
                 Show Starred Ideas
             </button>
-        </div>
+        </section>
     </nav>
     <main>
         <section class="input-container">
@@ -31,46 +27,21 @@
                 <input class="title-input" type="text">
                 <p id="titles">Body</p>
                 <input class="body-input" type="text">
-                <br>
                 <button class="save-button button-disable">
                     Save
                 </button>
-                <br>
-                <div class="idea-search">
-                    <button id="search-button">
-                        <img class="search-icon" id="search-icon" src="assets/search.svg" alt="search icon">
+                <section class="idea-search">
+                    <button id="searchButton">
+                        <img class="search-icon" id="searchIcon" src="assets/search.svg" alt="search icon">
                     </button>
                     <input class="search-ideas" type="text" placeholder="Search ideas">
-                </div>
+                </section>
             </section>
         </section>
         <article class="saved-cards">
-            <!-- <section class="idea-container"> -->
-                <!-- <section class="top-margin">
-                    <button class="star-btn">
-                        <img class="star-icon" id="star-icon" src="assets/star.svg" alt="blank favorite icon">
-                        <img class="star-icon-favorited" id="star-icon-favorited" src="assets/star-active.svg" alt="favorite icon active">
-                    </button>
-                    <button class="x-btn">
-                        <img class="x-icon" id="x-icon" src="assets/delete.svg" alt="delete icon">
-                    </button>
-                </section>
-                <section class="idea-contents">
-                    <h3 class="idea-title"> Title </h3>
-                    <p class="idea-contents"> Helloooosdfahbfgdaoubgfausdgfvau a uyvbertfaquyertfuyas uahosevbtr ause bvtruoay euloahyeb slujhas beltujhy b saet </p>
-                </section>
-                <section class="bottom-bar">
-                    <button class="plus-button">
-                         <img class="plus-icon" id="plus-icon" src="assets/comment.svg" alt="comment icon">
-                    </button>
-                    <h3 id="idea-card-comment">Comment</h3>
-                </section>
-            </section> -->
         </article>
-        
     </main>
-    <script src ="Idea.js"></script>
+    <script src="Idea.js"></script>
     <script src="main.js"></script>
 </body>
-
 </html>
