@@ -45,7 +45,7 @@ function createIdea(event) {
         `<section class="idea-container" >
             <section class="top-margin" id="${currentIdea.id}">
                 <button class="star-btn">
-                    <img class="star-icon" id="starIcon" src="assets/star.svg" alt="blank favorite icon">
+                    <img class=au"star-icon" id="starIcon" src="assets/star.svg" alt="blank favorite icon">
                 </button>
                 <button class="x-btn" id="${currentIdea.id}">
                     <img class="x-icon" id="xIcon" src="assets/delete.svg" alt="delete icon">

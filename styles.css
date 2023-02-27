@@ -1,4 +1,6 @@
-
+* {
+    margin: 0;
+}
 .main-nav {
     display: flex;
     flex-direction: column;
@@ -8,7 +10,8 @@
 }
 
 .main-header {
-    padding-left: 18px;
+    margin: 15px;
+    margin-left: 16px;
     font-size: large;
     font-family: "Open Sans", Bold;
     font-weight: bold;
@@ -18,7 +21,9 @@
 .second-header {
     font-family: "Open Sans", Bold;
     font-weight: bold;
-    color: #bfbfdd
+    color: #bfbfdd;
+    margin: 12px;
+    margin-left: 0;
 }
 
 .starred-ideas {
@@ -56,30 +61,25 @@ body {
 }
 
 .title-input {
-    width: 50vw;
+    width: 24vw;
     height: 3.5vh;
-    font-family: "Open Sans", Light;
 }
 
 .body-input {
-    width: 50vw;
+    width: 24vw;
     height: 10vh;
-    font-family: "Open Sans", Light;
+    margin-bottom: 10px;
 }
 
 .body-input, 
 .title-input, 
 .search-ideas {
-    border: solid 1.5px #353567
-}
-
-#titles {
-    font-size: 16px;
-    margin-bottom: 1.5px
+    border: solid 1.5px #353567;
+    font-family: "Open Sans", Light;
 }
 
 .save-button {
-    width: 50.3vw;
+    width: 24.4vw;
     height: 5vh;
     font-size: 20px;
     background-color: #63639a;
@@ -95,21 +95,32 @@ body {
     cursor: pointer;
 }
 
-#searchButton {
-    width: 4vw;
+.search-button {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 3vw;
     height: 5vh;
     border: 0;
     background-color: #353567;
     cursor: not-allowed;
+    margin-top: 10px;
 }
-
+::placeholder {
+    color:#5356a4;
+    opacity: 1;
+}
 .search-ideas {
-    width: 46vw;
-    height: 4.5vh;
+    color:#bfbfdd;
+    width: 21vw;
+    height: 4.3vh;
     padding-left: -5px;
+    margin-top: 10px;
 }
 
-#searchIcon {
+.search-icon {
     height: 3vh;
     width: 3vw;
     border: 0;
@@ -119,31 +130,41 @@ body {
     display: flex;
 }
 
+
 .user-input {
     display: flex;
     flex-direction: column;
+    font-size: 16px;
+    color:#1f1f3d;
+    margin: 0;
+}
+
+.titles {
+    margin: 5px;
+    font-size: 14px;
 }
 
 .saved-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-columns: 150px;
+    gap: 12px;
     width: 75vw;
-    height: 60vh;
+    height: 60%;
     background-color: #eaeaf4;
-    align-items: center;
     justify-items: center;
-    align-content: space-evenly;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
 .idea-container {
     border: 1px solid #1f1f3d;
-    width: 15vw;
+    width: 18vw;
     height: 25vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    justify-items: center;
     background-color: #fff;
 }
 
@@ -160,10 +181,6 @@ body {
     border: 0;
     background-color: #1f1f3d;
     cursor: pointer;
-}
-
-.star-icon.clicked {
-    background-image: 'assets/star-active.svg';
 }
 
 .bottom-bar {
