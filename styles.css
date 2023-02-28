@@ -1,6 +1,7 @@
 * {
     margin: 0;
 }
+
 .main-nav {
     display: flex;
     flex-direction: column;
@@ -47,9 +48,11 @@
 
 body {
     display: flex;
+    font-family: "Open Sans";
 }
 
 .input-container {
+    padding-right: 18px;
     width: 75vw;
     height: 40vh;
     background-color: #A9AAD2;
@@ -102,16 +105,18 @@ body {
     align-items: center;
     flex-direction: column;
     width: 3vw;
-    height: 5vh;
+    height: 4.8vh;
     border: 0;
     background-color: #353567;
     cursor: not-allowed;
     margin-top: 10px;
 }
+
 ::placeholder {
     color:#5356a4;
     opacity: 1;
 }
+
 .search-ideas {
     color:#bfbfdd;
     width: 21vw;
@@ -130,7 +135,6 @@ body {
     display: flex;
 }
 
-
 .user-input {
     display: flex;
     flex-direction: column;
@@ -146,7 +150,9 @@ body {
 
 .saved-cards {
     display: grid;
+    padding: 10px;
     grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     grid-auto-columns: 150px;
     gap: 12px;
     width: 75vw;
@@ -159,13 +165,14 @@ body {
 
 .idea-container {
     border: 1px solid #1f1f3d;
-    width: 18vw;
+    width: 20vw;
     height: 25vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     justify-items: center;
     background-color: #fff;
+    font-family: "Open Sans", Bold;
 }
 
 .top-margin {
@@ -212,13 +219,13 @@ body {
 }
 
 .idea-title {
+    margin-top: 0;
+    margin-bottom: 40px;
     font-family:'Open Sans', Bold;
-    font-weight: bold
 }
 
 .idea-contents {
     font-family: "Open Sans", Light;
-    font-weight: bolder;
 }
 
 .idea-card-comment {
