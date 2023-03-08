@@ -20,6 +20,9 @@ This is our 1st group project in Module 1. We have completed 3 projects prior to
 [Devynne Marshall](https://www.linkedin.com/in/devynnemarshall/)
 [Ashlee Webb](https://www.linkedin.com/in/ashlee-webb-0b592199/)
 
+### Link:
+[Idea Box]( https://ashleeawebb.github.io/Ideabox/)
+
 ### Learning Goals:
 We worked with Javascript, CSS, and HTML. The learning goals of this project were to gain an understanding on how to write clean HTML and CSS. We also learned the relationship between the DOM and Data Module and what it looks like. We utilized arrays to manipulate what is being displayed and to make clean DRY code that operates small functions.
 
